@@ -1,5 +1,5 @@
 flask
 gunicorn
-tensorflow==2.10.0
+tensorflow==2.9.0
 scikit-image
 
