@@ -1,24 +1,23 @@
 from __future__ import division, print_function
 # coding=utf-8
-import sys
+
 import os
-import glob
-import re
+
 import numpy as np
 
 # Keras
-from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
+
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.layers import Flatten
+
 
 # Flask utils
-import tensorflow_hub as hub
-from flask import Flask, redirect, url_for, request, render_template
-from tensorflow_hub import image_embedding_column, load_module_spec
+
+from flask import Flask, request, render_template
+
 from werkzeug.utils import secure_filename
 #from skimage import transform
-import tensorflow
+
 
 app = Flask(__name__)
 
@@ -32,7 +31,7 @@ def model_predict(img_path, model):
    # img = transform.resize(img, (500,500, 3))
    # img = np.expand_dims(img, axis=0)
 
-    img=image.load_img(img_path,target_size=(500,500))
+    img=image.load_img(img_path,target_size=(200,200))
     img = image.img_to_array(img)
     img = np.expand_dims(img,axis=0)
 
