@@ -1,3 +1,3 @@
 # Modify this Procfile to fit your needs
-web: gunicorn app:app --timeout 120 
+web: gunicorn app:app --timeout 600 
 
